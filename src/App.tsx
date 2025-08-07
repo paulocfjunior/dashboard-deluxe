@@ -1,7 +1,7 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./components/HomePage";
-import AdminPage from "./components/AdminPage"; // PROBLEM 5: Statically imported route
+const AdminPage = lazy(() => import("./components/AdminPage"));
 
 function App() {
   return (
@@ -9,10 +9,12 @@ function App() {
       <nav>
         <Link to="/">Home</Link> | <Link to="/admin">Admin</Link>
       </nav>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/admin" element={<AdminPage />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<AdminPage />} />
+        </Routes>
+      </Suspense>
     </Router>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { keyBy } from "lodash";
+import { keyBy } from "lodash-es";
 
 const AdminPage = () => {
   const users = [

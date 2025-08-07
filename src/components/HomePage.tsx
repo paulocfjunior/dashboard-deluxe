@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import moment from "moment";
+import React, { lazy, useState } from "react";
+import { format } from "date-fns";
 import { Button, Dialog } from "@mui/material";
-import ReportModal from "./ReportModal";
+
+const ReportModal = lazy(() => import("./ReportModal"));
 
 const HomePage = () => {
   const [open, setOpen] = useState(false);
-  const today = moment().format("MMMM Do, YYYY");
+  const today = format(new Date(), "MMMM do, yyyy");
 
   return (
     <div>
