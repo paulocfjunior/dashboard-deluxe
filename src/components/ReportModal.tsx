@@ -8,7 +8,6 @@ import {
   Title,
 } from "chart.js";
 
-// This setup makes the component "heavy"
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title);
 
 const ReportModal = () => {

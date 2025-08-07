@@ -5,7 +5,7 @@ import ReportModal from "./ReportModal";
 
 const HomePage = () => {
   const [open, setOpen] = useState(false);
-  const today = moment().format("MMMM Do, YYYY"); // Using moment
+  const today = moment().format("MMMM Do, YYYY");
 
   return (
     <div>
@@ -15,7 +15,6 @@ const HomePage = () => {
         Generate Report
       </Button>
       <Dialog open={open} onClose={() => setOpen(false)}>
-        {/* The modal is simple, but what's inside is heavy */}
         <ReportModal />
       </Dialog>
     </div>
