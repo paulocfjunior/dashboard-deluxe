@@ -9,7 +9,18 @@ function App() {
       <nav>
         <Link to="/">Home</Link> | <Link to="/admin">Admin</Link>
       </nav>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          height: '50vh',
+          fontSize: '18px',
+          color: '#777'
+        }}>
+          Loading...
+        </div>
+      }>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/admin" element={<AdminPage />} />

@@ -6,6 +6,7 @@ const AdminPage = () => {
     { id: "a", name: "Alice" },
     { id: "b", name: "Bob" },
   ];
+  
   const usersById = keyBy(users, "id");
   console.log(usersById);
 
